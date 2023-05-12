@@ -100,3 +100,31 @@ let activities = [
         price: 0.00 
     }
 ];
+
+let selectedValueElement = document.getElementById("eventCat")
+
+window.onload = function(){
+    submitBtn.onclick = onSubmitBtnClicked;
+    initActivities()
+}
+
+function initActivities(){
+
+    
+    let length = activities.length;
+    
+    for(let i = 0; i < length; i++) {
+        let activity = activities[i];
+        let theOptions = document.createElement("option");
+        
+        theOptions.textContent = activity.category;
+        theOptions.value = activity.id;
+
+        eventCat.appendChild(theOptions)
+    }
+}
+
+function onSubmitBtnClicked(){
+    console.log("CLicked")
+
+}
