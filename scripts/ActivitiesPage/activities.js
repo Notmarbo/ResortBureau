@@ -44,7 +44,7 @@ let activities = [
         price: 40.00 
     },   
     {
-        category: "Museums", 
+        category: "     ", 
         id: "M101", 
         name: "Bravings Airship Museum", 
         description: "Enjoy climbing on and in our collection of small airplanes.  You will find bi-planes, experimental planes and small jets.", 
@@ -104,25 +104,49 @@ let activities = [
 let selectedValueElement = document.getElementById("eventCat")
 
 window.onload = function(){
-    submitBtn.onclick = onSubmitBtnClicked;
-    initActivities()
+    // submitBtn.onclick = onSubmitBtnClicked;
+    // initActivities();
+    selectedValueElement.onchange = onCatagorySelectChange;
 }
 
-function initActivities(){
-
-    
-    let length = activities.length;
-    
-    for(let i = 0; i < length; i++) {
-        let activity = activities[i];
-        let theOptions = document.createElement("option");
-        
-        theOptions.textContent = activity.category;
-        theOptions.value = activity.id;
-
-        eventCat.appendChild(theOptions)
+function onCatagorySelectChange(){
+    let currentValue = selectedValueElement.value;
+    console.log(currentValue);
+    if(currentValue == "Adventures") {
+        console.log("user selected adventures")
     }
+    else if(currentValue == "Arts & Crafts"){
+        console.log("User selected arts & crafts")
+    }   
+    else if(currentValue == "Museums"){
+        console.log("User selected Museums")
+    }   
+    else if(currentValue == "Wine Tastings"){
+        console.log("User selected Wine Tastings")
+    }   
+    else if(currentValue == "Other"){
+        console.log("User selected Other")
+    }   
 }
+
+
+
+
+// function initActivities(){
+
+    
+//     let length = activities.length;
+    
+//     for(let i = 0; i < length; i++) {
+//         let activity = activities[i];
+//         let theOptions = document.createElement("option");
+        
+//         theOptions.textContent = activity.category;
+//         theOptions.value = activity.id;
+
+//         eventCat.appendChild(theOptions)
+//     }
+// }
 
 function onSubmitBtnClicked(){
     console.log("CLicked")
